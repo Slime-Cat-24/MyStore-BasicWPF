@@ -1,0 +1,43 @@
+﻿<Window x:Class="MyStore_BasicWPF_SangNHSE182627.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyStore_BasicWPF_SangNHSE182627"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="0">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50" FontWeight="Bold">
+                Login
+            </TextBlock>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Label Content="Email:" FontSize="25"/>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Label Content="Password:" FontSize="25"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox x:Name="txtEmail" Width="250" Height="30" FontSize="20"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <PasswordBox x:Name="txtPassword" Width="250" Height="30" FontSize="20"/>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Button Click="Login_btn" FontSize="15" Content="Login" Margin="10 0 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Height="30"/>
+            <Button Click="Cancel_btn" FontSize="15" Content="Cancel" Margin="0 0 10 0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="30"/>
+        </Grid>
+    </Grid>
+</Window>
