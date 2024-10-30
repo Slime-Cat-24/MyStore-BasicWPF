@@ -44,15 +44,20 @@ namespace MyStore_BasicWPF_SangNHSE182627
                             switch (account.MemberRole)
                             {
                                 case 1:
-                                    Admin admin = new Admin();
-                                    admin.Show();
+                                    Admin admin1 = new Admin(1);
+                                    admin1.Show();
                                     this.Close();
                                     break;
                                 case 2:
+                                    Admin admin2 = new Admin(2);
+                                    admin2.Show();
+                                    this.Close();
                                     break;
                                 case 3:
+                                    MessageBox.Show("Your account doesn't have permission to manage accounts", "No Permission", MessageBoxButton.OK, MessageBoxImage.Warning);
                                     break;
                                 default:
+                                    MessageBox.Show("Your account doesn't have permission to manage accounts", "No Permission", MessageBoxButton.OK, MessageBoxImage.Warning);
                                     break;
                             }
                         }
@@ -76,7 +81,6 @@ namespace MyStore_BasicWPF_SangNHSE182627
                 MessageBox.Show("Please enter email and password!", "Warming", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-
         private void Cancel_btn(object sender, RoutedEventArgs e)
         {
             this.Close();

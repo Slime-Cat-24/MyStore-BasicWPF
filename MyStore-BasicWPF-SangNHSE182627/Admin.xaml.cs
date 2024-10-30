@@ -26,10 +26,17 @@ namespace MyStore_BasicWPF_SangNHSE182627
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
 
-        public Admin()
+        private int roleId;
+
+        public Admin(int role)
         {
             InitializeComponent();
-            setActiveButton("AccountMember");
+            roleId = role;
+
+            if (role == 1)
+                setActiveButton("AccountMember");
+            else
+                setActiveButton("Product");
 
             _accountMemberService = new AccountMemberService();
             _productService = new ProductService();
@@ -60,7 +67,10 @@ namespace MyStore_BasicWPF_SangNHSE182627
 
         private void btnAccountList(object sender, RoutedEventArgs e)
         {
-            setActiveButton("AccountMember");
+            if (roleId == 1)
+                setActiveButton("AccountMember");
+            else
+                MessageBox.Show("Your account doesn't have permission to manage accounts", "No Permission", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
         private void btnProductList(object sender, RoutedEventArgs e)
         {
@@ -307,6 +317,8 @@ namespace MyStore_BasicWPF_SangNHSE182627
 
         private void btnLogout(object sender, RoutedEventArgs e)
         {
+            MainWindow login = new MainWindow();
+            login.Show();
             this.Close();
         }
     }

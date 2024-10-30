@@ -48,7 +48,7 @@ namespace MyStore_BasicWPF_SangNHSE182627
                 MessageBox.Show("Member ID cannot be empty.", "Input Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtMemberPassword.Text))
+            if (string.IsNullOrWhiteSpace(txtMemberPassword.Password))
             {
                 MessageBox.Show("Password cannot be empty.", "Input Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -66,7 +66,7 @@ namespace MyStore_BasicWPF_SangNHSE182627
             var newAccountMember = new AccountMember
             {
                 MemberId = txtMemberID.Text,
-                MemberPassword = txtMemberPassword.Text,
+                MemberPassword = txtMemberPassword.Password,
                 FullName = txtFullName.Text,
                 EmailAddress = txtEmailAddress.Text,
                 MemberRole = roleID,
